@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use DateTime;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,6 +14,7 @@ class TestController extends AbstractController
     {
         return $this->render('test/index.html.twig', [
             'controller_name' => 'TestController',
+            'date' => (new DateTime())->modify('-1234 seconds')
         ]);
     }
 }
